@@ -5,22 +5,17 @@
  */
 int main(void)
 {
-	int i = 97;
+	int i = 48;
 
-	int b = 122;
+	int b = 57;
 
 	while (i <= b)
 	{
 		putchar(i);
-		if (i == 122)
+		if (i == 57)
 		{
-			i = 64;
-			b = 90;
-		}
-		if (i == 101 || i == 113)
-		{
-			i++;
-			continue;
+			i = 96;
+			b = 102;
 		}
 		i++;
 	}

@@ -9,20 +9,10 @@ int main(void)
 
 	int b = 122;
 
-	while (i <= b)
+	while (b >= i)
 	{
-		putchar(i);
-		if (i == 122)
-		{
-			i = 64;
-			b = 90;
-		}
-		if (i == 101 || i == 113)
-		{
-			i++;
-			continue;
-		}
-		i++;
+		putchar(b);
+		b--;
 	}
 	putchar('\n');
 	return (0);

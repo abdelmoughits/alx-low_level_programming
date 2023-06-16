@@ -5,11 +5,20 @@
  */
 int main(void)
 {
-	int i;
+	int i = 97;
 
-	char ch[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n";
+	int b = 122;
 
-	for (i = 0 ; i < 27 ; i++)
-		putchar(ch[i]);
+	while (i <= b)
+	{
+		putchar(i);
+		if (i == 122)
+		{
+			i = 64;
+			b = 90;
+		}
+		i++;
+	}
+	putchar('\n');
 	return (0);
 }
