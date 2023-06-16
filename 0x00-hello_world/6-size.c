@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
-  *using the printf with  sizeof
-  *return 0
+  *main -Entry point
+  *Return: always 0
   */
 int main(void)
 {
