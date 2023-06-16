@@ -12,11 +12,6 @@ int main(void)
 	while (i <= b)
 	{
 		putchar(i);
-		if (i == 122)
-		{
-			i = 64;
-			b = 90;
-		}
 		if (i == 101 || i == 113)
 		{
 			i++;
