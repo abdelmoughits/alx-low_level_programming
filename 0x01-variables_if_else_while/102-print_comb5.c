@@ -17,7 +17,7 @@ int main(void)
 			e = b / 10;
 			f = b % 10;
 
-			if (a > b)
+			if (a >= b)
 			{
 				continue;
 			}
