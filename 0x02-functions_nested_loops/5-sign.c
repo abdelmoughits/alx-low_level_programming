@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.c"
+#include "main.h"
 /**
   *print_sign - Shows 1 and print 1 if the input is an
   *positive number, return and print 0 if it is 0. Another casees return and shows
