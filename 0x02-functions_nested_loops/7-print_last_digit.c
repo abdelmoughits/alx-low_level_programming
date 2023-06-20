@@ -1,0 +1,11 @@
+#include <stdio.h>
+/**
+  *print_last_digit - Prints the last digit of the number
+  *@n: the input number as an integer 
+  *Return: the value of the last digit
+  */
+int print_last_digit(int n)
+{
+	n = n % 10;
+	return (n);
+}
