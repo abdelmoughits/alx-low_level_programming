@@ -4,7 +4,7 @@
   *lowercase character. Another casees shows
   *0
   *@c: the character in ASCII code
-  *Reurn: 1 if c lower and 0 if it is upper
+  *Return: 1 if c lowercase character. 0 for the rest
   */
 int _islower(int c)
 {
