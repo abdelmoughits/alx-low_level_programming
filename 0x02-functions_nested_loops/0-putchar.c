@@ -6,12 +6,12 @@
   */
 int main(void)
 {
-	char put[] = "_putchar\n";
-	long unsigned int i;
-
-	for (i = 0 ; i < sizeof(put) ; i++)
-	{
-		_putchar(put[i]);
-	}
+	_putchar("_");
+	_putchar("p");
+	_putchar("u");
+	_putchar("t");
+	_putchar("c");
+	_putchar("h");
+	_putchar("r");
 	return (0);
 }
