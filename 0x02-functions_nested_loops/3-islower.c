@@ -1,7 +1,8 @@
 #include <ctype.h>
 /**
-  *_islower -Shows 1 if the input is a
-  *lowercase character, an other casees shows 0
+  *_islower - Shows 1 if the input is a
+  *lowercase character. Another casees shows
+  *0
   *@c: the character in ASCII code
   *Reurn: 1 if c lower and 0 if it is upper
   */
