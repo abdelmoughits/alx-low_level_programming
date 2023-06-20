@@ -1,6 +1,6 @@
 #include <ctype.h>
 /**
-  *_islower - Shows 1 if the input is an
+  *_isalpha - Shows 1 if the input is an
   *alphabetic character. Another casees shows
   *0
   *@c: the character in ASCII code
