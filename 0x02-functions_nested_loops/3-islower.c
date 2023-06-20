@@ -1,6 +1,7 @@
 #include <ctype.h>
 /**
-  *_islower -A function that checks for lowercase character
+  *_islower -Shows 1 if the input is a
+  *lowercase character, an other casees shows 0
   *@c: the character in ASCII code
   *Reurn: 1 if c lower and 0 if it is upper
   */
@@ -10,7 +11,7 @@ int _islower(int c)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}
