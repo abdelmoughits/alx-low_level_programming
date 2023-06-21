@@ -11,7 +11,7 @@ void print_to_98(int n)
 {
 	int a, b;
 
-	while ()
+	while (1)
 	{
 		a = n / 10;
 		b = n % 10;
