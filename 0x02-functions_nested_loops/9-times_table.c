@@ -16,13 +16,16 @@ void times_table(void)
 			b = m * h;
 			d = b % 10;
 			c = b / 10;
-			if(c == 0 && m != 0)
+			if (c == 0 && m != 0)
 			{
 				_putchar(32);
 			}
 			else
 			{
-				_putchar(c + 48);
+				if (m != 0)
+				{
+					_putchar(c + 48);
+				}
 			}
 			_putchar(d + 48);
 			if (m != 9)
