@@ -11,11 +11,11 @@ void print_to_98(int n)
 {
 	int a, b;
 
-	while (n <= 98 || n > 98)
+	while ()
 	{
 		a = n / 10;
 		b = n % 10;
-		if (n < 98)
+		if (n < 0)
 		{
 			a = abs(a);
 			b = abs(b);
