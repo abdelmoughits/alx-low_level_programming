@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 /**
   *print_last_digit - Prints the last digit of the number
   *@n: the input number as an integer
