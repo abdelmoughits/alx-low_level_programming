@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "main.h"
 /**
-  *jack_bauer - Prints every minute of the day of Jack Bauer
+  *times_table - rints the 9 times table, starting with 0.
   *Return: not exist
   */
 
-void jack_bauer(void)
+void times_table(void)
 {
 	int h, m, b, c, d;
 
