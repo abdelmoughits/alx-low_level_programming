@@ -1,31 +1,39 @@
+#include <stdio.h>
 /**
   *main - Prints the numbers from 1 to 100, followed by a new line
-  *Return: not exsit
+  *Return: always 0
   */
-void main(void)
+int main(void)
 {
 	int i ;
 
-	char fbz[];
-
 	for (i = 1 ; i <= 100 ; i ++)
 	{
-		if (i % 3 == 0)
-		{
-			fbz[] = "Fizz";
-		}
-		if (i % 4 == 4)
-		{
-			fbz[] = "Buzz";
-		}
 		if (i % 3 == 0 && i % 4 == 0)
 		{
-			fbz[] = "FizzBuzz";
+			printf("FizzBuzz");
+		}
+		else
+		{
+			if (i % 3 == 0)
+			{
+				printf("Fizz");
+			}
+			if (i % 4 == 0)
+			{
+				printf("Buzz");
+			}
+		}
+		if (!(i % 3 == 0 || i % 4 == 0))
+		{
+			printf("%d", i);
 		}
 		if (i != 100)
 		{
-			_putchar(32);
+			printf("%c", 32);
 		}
+
 	}
-	printf("%c\n", fbz);
+	printf("\n");
+	return (0);
 }
