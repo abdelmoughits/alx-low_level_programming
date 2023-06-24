@@ -6,7 +6,7 @@
   */
 int main(void)
 {
-	long int nu = 612852475143;
+	long int nu = 10;
 
 	int i;
 
@@ -15,10 +15,13 @@ int main(void)
 		while (nu % i == 0)
 		{
 			nu = nu / i;
+			printf("nu: %ld\n", nu);
+			printf("i: %d\n", i);
 		}
 		if (nu / i == 1)
 		{
-			printf("%ld\n", nu);
+			printf("nu again: %ld\n", nu);
+			printf("i again: %d\n", i);
 			break;
 		}
 	}
