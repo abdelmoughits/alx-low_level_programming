@@ -4,7 +4,7 @@
   *@n: intiger variable
   *Return: not exist
   */
-void the_number(int b);
+void the_number(int n);
 void print_number(int n)
 {
 	if (n == 0)
@@ -26,15 +26,14 @@ void print_number(int n)
 }
 
 /**
-  *the_number - A recursive function
-  *@b: intiger variable
-  *Return: not exist
+  *the_number - Print the gigites of an intiger one by one.
+  **@n: intiger variable
   */
-void the_number(int b)
+void the_number(int n)
 {
-	if (b % 10 != 0 || b / 10 != 0)
+	if (n % 10 != 0 || n / 10 != 0)
 	{
-		the_number(b / 10);
-		_putchar(b % 10 + 48);
+		the_number(n / 10);
+		_putchar(n % 10 + 48);
 	}
 }
