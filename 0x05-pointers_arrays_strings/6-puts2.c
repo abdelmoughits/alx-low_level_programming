@@ -12,7 +12,6 @@ void puts2(char *str)
 	while (*str != '\0')
 	{
 		num = *str - '0';
-		printf("num = %d\n", num);
 		if (num % 2 == 0)
 		{
 			_putchar(num + 48);
