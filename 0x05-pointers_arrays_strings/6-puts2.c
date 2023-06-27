@@ -12,7 +12,7 @@ void puts2(char *str)
 	while (str[num] != '\0')
 	{
 		_putchar(str[num]);
-		i += 2;
+		num += 2;
 	}
 	_putchar('\n');
 }
