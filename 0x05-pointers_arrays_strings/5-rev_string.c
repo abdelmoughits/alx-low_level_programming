@@ -19,12 +19,11 @@ void rev_string(char *s)
 	s--;
 	len--;
 	i = 0;
-	while (!((i == len && len % 2 == 1) || len - 1 == i))
+	while (i <= len / 2)
 	{
 		rev = *(s - i);
-		*(s - i) = *(s - len);
-		*(s - len) = rev;
-		len--;
+		*(s - i) = *(s - len + i);
+		*(s - len + i) = rev;
 		i++;
 
 	}
