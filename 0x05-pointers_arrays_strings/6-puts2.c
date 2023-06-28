@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
   *puts2 - Prints every other character of a string
   *@str: pointer to a variable of type intiger
@@ -10,8 +11,11 @@ void puts2(char *str)
 
 	while (str[num] != '\0')
 	{
-		_putchar(str[num]);
-		num += 2;
+		if (num % 2 == 0)
+		{
+			_putchar(str[num]);
+		}
+		num ++;
 	}
 	_putchar('\n');
 }
