@@ -1,3 +1,4 @@
+#include <stdbool.h>
 /**
   *_strcat - Concatenates two strings
   *@dest: pointer: to the char variable
