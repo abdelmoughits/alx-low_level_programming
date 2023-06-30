@@ -4,6 +4,7 @@
   *_strncat - Concatenates two strings.
   *@dest: pointer to the char variable
   *@src: pointer to the char variable
+  *@n: intiger variable
   *Return: dest
   */
 char *_strncat(char *dest, char *src, int n)
@@ -25,7 +26,7 @@ char *_strncat(char *dest, char *src, int n)
 			b++;
 		}
 		if (src[b] == '\0')
-		{	
+		{
 			dest[i + 1] = src[b];
 			break;
 		}
