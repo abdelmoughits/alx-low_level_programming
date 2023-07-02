@@ -6,14 +6,15 @@
 char *leet(char *str)
 {
 	char ran[] = "43071";
-	char tn[] = "aAeEoOtTlL";
+	char tn[] = "aeotl";
+	char nt[] = "AEOTL";
 	int i, count = 0;
 
 	while (str[count])
 	{
 		for (i = 0 ; i < 5 ; i++)
 		{
-			if (str[count] == tn[i * 2] || str[count] == tn[i * 2 - 1])
+			if (str[count] == tn[i] || str[count] == nt[i])
 			{
 				str[count] = ran[i];
 			}
