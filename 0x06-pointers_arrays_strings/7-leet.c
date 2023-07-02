@@ -11,12 +11,11 @@ char *leet(char *str)
 
 	while (str[count])
 	{
-		i = 0;
-		for (i = 0 ; i < 5 ; i += 2)
+		for (i = 0 ; i < 5 ; i++)
 		{
-			if (str[count] == tn[i] || str[count] == tn[i + 1])
+			if (str[count] == tn[i * 2] || str[count] == tn[i * 2 - 1])
 			{
-				str[count] = ran[i /  2];
+				str[count] = ran[i];
 			}
 		}
 		count++;
