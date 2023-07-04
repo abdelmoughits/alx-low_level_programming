@@ -6,24 +6,24 @@
   */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i , b, retu, c = 1;
+	int i , b, val, c = 0;
 
-	retu = 0;
+	val = 0;
 
 	for(i = 0 ; s[i] != '\0' ; i++)
 	{
-		b = 0;
+		c = 0;
 		for (b = 0 ; accept[b] != '\0' ; b++)
 		{
-			if (s[i] != accept[b] && c == 1)
+			if (s[i] == accept[b] && c == 0)
 			{
-				c = 0;
+				c = 1;
 			}
 		}
-		if (c == 1)
+		if (c == 0)
 		{
-			retu++;
+			val++;
 		}
 	}
-	return (retu);
+	return (val);
 }
