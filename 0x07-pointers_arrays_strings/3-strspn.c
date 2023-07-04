@@ -20,10 +20,6 @@ unsigned int _strspn(char *s, char *accept)
 				val++;
 				break;
 			}
-			else if (accept[i + 1] == '\0')
-			{
-				return (val);
-			}
 			s++;
 		}
 	}
