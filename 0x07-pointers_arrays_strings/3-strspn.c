@@ -15,7 +15,7 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		for (b = 0 ; accept[i] ; i++)
 		{
-			if (accept[b] == s[i])
+			if (accept[i] == *s)
 			{
 				val++;
 				break;
