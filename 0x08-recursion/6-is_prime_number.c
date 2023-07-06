@@ -18,11 +18,11 @@ int is_prime_number(int n)
   */
 int prime(int n, int a)
 {
-	if ((n % a == 0 && a < n) || n < 1)
+	if ((n % a == 0 && a < n) || n <= 1)
 	{
 		return (0);
 	}
-	else if (n == a)
+	if (n == a)
 	{
 		return (1);
 	}
