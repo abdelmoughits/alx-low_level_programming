@@ -24,5 +24,5 @@ int sqr(int n, int i)
 	{
 		return (i);
 	}
-	return (sqr(n, i + 1);
+	return (sqr(n, i + 1));
 }
