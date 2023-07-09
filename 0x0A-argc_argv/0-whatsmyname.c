@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 /**
   *main - Prints its name, followed by a new line.
   *@argc: argument count
