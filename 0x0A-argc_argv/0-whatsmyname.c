@@ -5,7 +5,7 @@
   *@argv: char array
   *Return: always 0 (sucese)
   */
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	printf("%s", argv[0]);
 	return (0);
