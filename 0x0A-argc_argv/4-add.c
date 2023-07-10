@@ -20,6 +20,10 @@ int main(int argc, char *argv[])
 		if (argv[count][0] <= '9' && argv[count][0] >= '0')
 		{
 			i1 = atoi(argv[count]);
+			if (i1 < 0)
+			{
+				continue;
+			}
 			result += i1;
 		}
 		else
