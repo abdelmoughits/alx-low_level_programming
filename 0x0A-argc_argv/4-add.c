@@ -8,7 +8,8 @@
   */
 int main(int argc, char *argv[])
 {
-	int count, i1, result = 0;
+	int count, i, i1, result = 0;
+	int boo = 0;
 
 	if (argc == 1)
 	{
@@ -17,7 +18,14 @@ int main(int argc, char *argv[])
 	}
 	for (count = 1 ; count < argc ; count++)
 	{
-		if (argv[count][0] <= '9' && argv[count][0] >= '0')
+		for (i = 0 ; argv[count][i] != '\0' ; i++)
+		{
+			if (!(argv[count][i] <= '9' && argv[count][i] >= '0'))
+			{
+				boo = 1;
+			}
+		}
+		if (!boo)
 		{
 			i1 = atoi(argv[count]);
 			result += i1;
