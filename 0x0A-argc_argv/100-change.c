@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		{
 			t += n / arr[i];
 			printf("%d\n", t);
-			return (atoi(argv[1]));
+			return (0);
 		}
 		else if (n / arr[i] ==  0)
 		{
