@@ -13,13 +13,13 @@ int main(int argc, char *argv[])
 	int n, i, t = 0;
 
 	i = 0;
-	n = atoi(argv[1]);
 
-	if (argc != 2 || n == 0)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	n = atoi(argv[1]);
 	if (n < 0)
 	{
 		printf("0\n");
