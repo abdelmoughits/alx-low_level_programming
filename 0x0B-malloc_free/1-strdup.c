@@ -11,7 +11,7 @@ char *_strdup(char *str)
 
 	b = sizeof(str);
 	array = malloc(sizeof(char) * b);
-	if (array == NULL)
+	if (array == NULL || str == NULL)
 	{
 		return (NULL);
 	}
