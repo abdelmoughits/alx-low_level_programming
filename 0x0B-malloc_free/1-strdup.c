@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 /**
   *_strdup - Contains a copy of the string given as a
@@ -10,7 +11,8 @@ char *_strdup(char *str)
 	char *array;
 
 	for (b = 0 ; str != NULL && str[b] != '\0'; b++)
-	array = malloc(sizeof(char) * (b + 1));
+	{}
+	array = malloc(sizeof(char) * b);
 	if (array == NULL || str == NULL)
 	{
 		return (NULL);
