@@ -5,18 +5,19 @@
   *@s1: pointer to a char variable
   *@s2: pointer to a char variable
   *@n: unsigned intiger variable
-  *Return: space in memory, which contains s1, 
+  *Return: space in memory, which contains s1,
   *followed by the first n bytes of s2
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int i, b, len1, len2;
 	char *ptr;
+
 	i = b = len1 = len2 = 0;
 
 	if (s1 != NULL)
 	{
-		wile (s1[i] != '\0')
+		while (s1[i] != '\0')
 		{
 			len1++;
 		}
@@ -24,13 +25,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 != NULL)
 	{
 		i = 0;
-		wile (s2[i] != '\0')
+		while (s2[i] != '\0')
 		{
 			len2++;
 		}
 	}
 	b = len1 + len2 + 1;
-	ptr = malloc (b);
+	ptr = malloc(b);
 	if (ptr == NULL)
 	{
 		return (NULL);
