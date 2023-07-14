@@ -2,7 +2,7 @@
 #include "main.h"
 /**
   *_calloc - Aallocates memory for an array, using malloc.
-  *@nmeb: unsigned intiger variable
+  *@nmemb: unsigned intiger variable
   *@size: unsigned intiger variable
   *Return: a pointer to the allocated memory.
   */
