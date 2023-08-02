@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
-  *insert_nodeint_at_index - Inserts a new node at a given position.
+  *delete_nodeint_at_index - Inserts a new node at a given position.
   *@head: pointer to a pointer to a listint_t variable
-  *@idx: unsigned intiger vareiable
-  *@n:intiger variable
-  *Return:  the address of the new node, or NULL if it failed
+  *@index: unsigned intiger vareiable
+  *Return: 1, or -1 if it failed
   *or if it is not possible to add the new node at index idx
   */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
