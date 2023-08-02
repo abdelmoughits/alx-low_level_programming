@@ -13,43 +13,32 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new;
-	listint_t *p;
 	listint_t *tpn;
+	unsigned int i = 0;
 
-	p = *head;
-	tpn = get_nodeint_at_index(p, idx - 1);
-	p = tpn->next;
+	tpn = *head;
 	new = malloc(sizeof(listint_t));
-	if (p == NULL || tpn == NULL || new == NULL)
+	if (!new)
 	{
 		return (NULL);
 	}
 	new->n = n;
-	new->next = p;
-	tpn->next = new;
-	return (new);
-}
-/**
-  *get_nodeint_at_index - Returns the nth node of a listint_t linked list.
-  *@head: pointer to a listint_t variable
-  *@index: unsigned integer variable
-  *Return:  the nth node of a listint_t linked list.
-  *or if the node does not exist, return NULL
-  */
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
-{
-	unsigned int i = 0;
-	listint_t *p;
-
-	p = head;
-	while (p != NULL && i != index)
+	if (idx == 0)
 	{
-		p = p->next;
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
+	while (i != idx - 1 || !tpn)
+	{
+		tpn = tpn->next;
 		i++;
 	}
-	if (p == NULL)
+	if (!tpn && i != idx)
 	{
 		return (NULL);
 	}
-	return (p);
+	new->next = tpn->next;
+	tpn->next = new;
+	return (new);
 }
