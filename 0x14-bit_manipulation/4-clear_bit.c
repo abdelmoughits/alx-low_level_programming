@@ -1,11 +1,11 @@
 #include "main.h"
 /**
-  *get_bit - Sets the value of a bit to 1 at a given index.
+  *clear_bit - Sets the value of a bit to 1 at a given index.
   *@index: variable
   *@n: variable
   *Return: 1 if it worked, or -1 if an error occurred
   */
-int get_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int i = 1;
 
@@ -14,6 +14,6 @@ int get_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 	}
 	i = ~(i << index);
-	*n = i | *n;
+	*n = i & *n;
 	return (1);
 }
