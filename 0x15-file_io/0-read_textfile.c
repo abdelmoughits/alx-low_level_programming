@@ -1,8 +1,4 @@
-#include <stddef.h>
 #include "main.h"
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h>
 /**
   *read_textfile - Reads a text file and prints it to the POSIX standard output
@@ -13,13 +9,10 @@
   */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fp, n;
+	int fp;
+	ssize_t n, p;
 	char *ptr;
 
-	if (!filename || letters <= 0)
-	{
-		return (0);
-	}
 	fp = open(filename, O_RDONLY);
 	if (fp == -1)
 	{
@@ -38,8 +31,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fp);
 		return (0);
 	}
-	write(STDOUT_FILENO, ptr, letters);
+	p = write(STDOUT_FILENO, ptr, n);
 	free(ptr);
 	close(fp);
-	return (n);
+	return (p);
 }
