@@ -1,31 +1,48 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
-  *append_text_to_file - Appends text at the end of a file.
-  *@filename: variable
-  *@text_content: variable char pointer
-  *Return: -1 or 1
-  */
-int append_text_to_file(const char *filename, char *text_content)
+   *main - Copies the content of a file to another file.
+   *@argc: intiger variable
+   *@argv: pointer to an aray of arguments
+   *Return: 1 or -1
+*/
+int main(int argc, char *argv[])
 {
-	int fp, w = 0, n = 0;
+	int fp = 0, fd = 0, rf = 1, rf2 = 1;
+	char text[1024];
 
-	if (!filename)
+	if (argc != 3)
 	{
-		return (-1);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
-	if (text_content)
+	fp = open(argv[1], O_RDONLY);
+	fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
+	while (rf > 0 && rf2 > 0)
 	{
-		for (n = 0; text_content[i];)
-			n++;
+		rf = read(fp, text, 1024);
+		rf2 = write(fd, text, rf);
 	}
-	fp = open(filename, O_ APPEND | O_WRONLY);
-	w = write(fp, text_content, n);
-	if (n == -1 or w == -1)
+	if (rf == -1 || fp == -1)
 	{
-		close(fp);
-		return (-1);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
-	close(fp);
-	return (1);
+	if (rf2 == -1 || fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
+	if (close(fp) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
+		exit(100);
+	}
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+	exit(0);
 }
