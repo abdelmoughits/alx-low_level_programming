@@ -19,10 +19,13 @@ int main(int argc, char *argv[])
 	}
 	fp = open(argv[1], O_RDONLY);
 	fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
-	while (rf > 0 && rf2 > 0)
+	if (fp != -1 && fd != -1)
 	{
-		rf = read(fp, text, 1024);
-		rf2 = write(fd, text, rf);
+		while (rf > 0 && rf2 > 0)
+		{
+			rf = read(fp, text, 1024);
+			rf2 = write(fd, text, rf);
+		}
 	}
 	if (rf == -1 || fp == -1)
 	{
