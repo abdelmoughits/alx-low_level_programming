@@ -8,14 +8,17 @@
   */
 int create_file(const char *filename, char *text_content)
 {
-	int w, fp, n;
+	int w, fp, n = 0;
 
 	if (!filename)
 	{
 		return (-1);
 	}
+	if (text_content)
+	{
+		for (n = 0; text_content[n]; n++);
+	}
 	fp = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
-	for (n = 0; text_content[n]; n++)
 	w = write(fp, text_content, n);
 	if (fp == -1 || w == -1)
 	{
