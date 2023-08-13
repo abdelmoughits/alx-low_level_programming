@@ -12,14 +12,15 @@ int main(int argc, char *argv[])
 {
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
-	Elf32_Ehdr *buffer;
+	Elf64_Ehdr *buffer;
+	long int var = 0;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: ./elf_header elf_filename\n");
 		exit(98);
 	}
-	buffer = malloc(sizeof(Elf32_Ehdr));
+	buffer = malloc(sizeof(Elf64_Ehdr));
 	if (!buffer)
 	{
 		fprintf(stderr, "Error, the programme fielled\n");
@@ -163,6 +164,10 @@ int main(int argc, char *argv[])
 	printf("  ABI Version:                       %d\n", ptr[EI_ABIVERSION]);
 	/*------------------------------------------------------*/
 	/*print Type*/
+	if (ptr[EI_CLASS] == ELFCLASS32)
+	{
+		var = buffer->e_type >> 8;
+	}
 	printf("  Type:                              ");
 	switch (buffer->e_type)
 	{
