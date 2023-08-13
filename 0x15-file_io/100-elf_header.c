@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
 	/*print Entry*/
 	if (buffer->e_entry == 0)
 	{
-		printf("  Entry point address:              0 ((no associated entry point)\n");
+		printf("  Entry point address:              0 (no entry point)\n");
 	}
 	else
 	{
