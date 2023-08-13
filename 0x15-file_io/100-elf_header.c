@@ -168,8 +168,12 @@ int main(int argc, char *argv[])
 	{
 		var = buffer->e_type >> 8;
 	}
+	else
+	{
+		var = buffer->e_type;
+	}
 	printf("  Type:                              ");
-	switch (buffer->e_type)
+	switch (var)
 	{
 		case ET_NONE:
 			printf("<NONE: No file type>\n");
