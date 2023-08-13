@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: ./elf_header elf_filename\n");
 		exit(98);
 	}
-	buffer = malloc(sizeof(Elf64_Ehdr));
+	buffer = malloc(sizeof(Elf32_Ehdr));
 	if (!buffer)
 	{
 		fprintf(stderr, "Error, the programme fielled\n");
