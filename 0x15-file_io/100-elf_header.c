@@ -164,16 +164,8 @@ int main(int argc, char *argv[])
 	printf("  ABI Version:                       %d\n", ptr[EI_ABIVERSION]);
 	/*------------------------------------------------------*/
 	/*print Type*/
-	if (ptr[EI_CLASS] == ELFCLASS32)
-	{
-		var = buffer->e_type >> 16;
-	}
-	else
-	{
-		var = buffer->e_type;
-	}
 	printf("  Type:                              ");
-	switch (var)
+	switch (buffer->e_type)
 	{
 		case ET_NONE:
 			printf("<NONE: No file type>\n");
@@ -210,12 +202,9 @@ int main(int argc, char *argv[])
 	printf("  Entry point address:               ");
 	if (ptr[EI_CLASS] == ELFCLASS32)
 	{
-		printf("0x%x\n", (unsigned int)buffer->e_entry);
+		var = buffer->e_entry >> 32;
 	}
-	if (ptr[EI_CLASS] == ELFCLASS64)
-	{
-		printf("0x%lx\n", (unsigned long int)buffer->e_entry);
-	}
+	printf("0x%lx\n", (unsigned long int)var);
 	return (0);
 }
 /**
