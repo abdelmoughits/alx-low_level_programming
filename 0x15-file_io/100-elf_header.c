@@ -199,14 +199,15 @@ int main(int argc, char *argv[])
 	/*-------------------------------------------------------*/
 	/*print Entry*/
 	printf("  Entry point address:               ");
-	if (ptr[EI_CLASS] == ELFCLASS32)
+	printf("0x%lx\n", (unsigned long)buffer->e_entry);
+	/**if (ptr[EI_CLASS] == ELFCLASS32)
 	{
 		printf("0x%x\n", (unsigned int)buffer->e_entry);
 	}
 	if (ptr[EI_CLASS] == ELFCLASS64)
 	{
 		printf("0x%lx\n", (unsigned long)buffer->e_entry);
-	}
+	}*/
 	return (0);
 }
 /**
