@@ -172,7 +172,7 @@ int main(int argc, char *argv[])
 		case ET_REL:
 			printf("REL (Relocatable file)\n");
 			break;
-		case ET_EXEC:
+		case 2:
 			printf("EXEC (Executable file)\n");
 			break;
 		case ET_DYN:
@@ -198,14 +198,7 @@ int main(int argc, char *argv[])
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
-	if (buffer->e_entry == 0)
-	{
-		printf("  Entry point address:              0 (no entry point)\n");
-	}
-	else
-	{
-		printf("  Entry point address:               0x%08lx\n", buffer->e_entry);
-	}
+	printf("  Entry point address:               0x%lx\n", buffer->e_entry);
 	return (0);
 }
 /**
