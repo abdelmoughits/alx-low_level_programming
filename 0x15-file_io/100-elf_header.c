@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
 	Elf64_Ehdr *buffer;
-	long int var = 0;
+	unsigned long int var = 0;
 
 	if (argc != 2)
 	{
@@ -202,9 +202,13 @@ int main(int argc, char *argv[])
 	printf("  Entry point address:               ");
 	if (ptr[EI_CLASS] == ELFCLASS32)
 	{
-		var = buffer->e_entry >> 32;
+		var =(unsigned long int)(buffer->e_entry >> 16);
 	}
-	printf("0x%lx\n", (unsigned long int)var);
+	else
+	{
+		var = (unsigned long int)buffer->e_entry);
+	}
+	printf("0x%lx\n", var);
 	return (0);
 }
 /**
