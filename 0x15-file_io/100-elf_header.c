@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 	{
 		printf("Invalid data encoding\n");
 	}
-	if (ptr[EI_DATA] == ELFDATA2LSB	)
+	if (ptr[EI_DATA] == ELFDATA2LSB)
 	{
 		printf("little endian\n");
 	}
@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("Invalid version\n");
+		printf("1\n");
 	}
 	/*-----------------------------------------------------*/
 	/*print os/abi*/
@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
 		case ELFOSABI_MODESTO:
 			printf("UNIX - Novell Modesto\n");
 			break;
-		case ELFOSABI_OPENBSD	:
+		case ELFOSABI_OPENBSD:
 			printf("UNIX - Open BSD\n");
 			break;
 		case 13:
@@ -204,7 +204,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("  Entry point address:               %p\n", (void *)buffer->e_entry);
+		printf("  Entry point address:               0x%x\n", (void *)buffer->e_entry);
 	}
 	return (0);
 }
