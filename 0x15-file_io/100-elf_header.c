@@ -149,10 +149,10 @@ int main(int argc, char *argv[])
 		case ELFOSABI_OPENBSD	:
 			printf("UNIX - Open BSD\n");
 			break;
-		case ELFOSABI_OPENVMS:
+		case 13:
 			printf("UNIX - Open VMS\n");
 			break;
-		case ELFOSABI_NSK:
+		case 14:
 			printf("UNIX - Hewlett-Packard Non-Stop Kernel\n");
 			break;
 		default:
