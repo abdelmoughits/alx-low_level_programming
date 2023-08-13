@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
 	/*print Type*/
 	if (ptr[EI_CLASS] == ELFCLASS32)
 	{
-		var = buffer->e_type >> 8;
+		var = buffer->e_type >> 16;
 	}
 	else
 	{
