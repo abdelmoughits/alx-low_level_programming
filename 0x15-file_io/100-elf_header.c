@@ -194,14 +194,11 @@ int main(int argc, char *argv[])
 			printf("HIPROC (Processor-specific)\n");
 			break;
 		default:
-			printf("ooooooooooooooooooooooooooooooooo\n");
+			printf("\n");
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
 	printf("  Entry point address:               ");
-	printf("0x%x\n", (unsigned int)buffer->e_entry);
-	printf("0x%lx\n", (unsigned long int)buffer->e_entry);
-	/**
 	if (ptr[EI_CLASS] == ELFCLASS32)
 	{
 		printf("0x%x\n", (unsigned int)buffer->e_entry);
@@ -209,7 +206,7 @@ int main(int argc, char *argv[])
 	if (ptr[EI_CLASS] == ELFCLASS64)
 	{
 		printf("0x%lx\n", (unsigned long int)buffer->e_entry);
-	}*/
+	}
 	return (0);
 }
 /**
