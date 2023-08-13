@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		var = (unsigned long int)buffer->e_entry);
+		var = (unsigned long int)(buffer->e_entry);
 	}
 	printf("0x%lx\n", var);
 	return (0);
