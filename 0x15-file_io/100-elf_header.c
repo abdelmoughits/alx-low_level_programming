@@ -194,7 +194,7 @@ int main(int argc, char *argv[])
 			printf("HIPROC (Processor-specific)\n");
 			break;
 		default:
-			printf("\n");
+			printf("ooooooooooooooooooooooooooooooooo\n");
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
