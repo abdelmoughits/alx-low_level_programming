@@ -73,30 +73,30 @@ int main(int argc, char *argv[])
 	/*----------------------------------------------------*/
 	/*print class*/
 	printf("  Class:                             ");
-	if (ptr[EI_CLASS] == 0)
+	if (ptr[EI_CLASS] == ELFCLASSNONE)
 	{
 		printf("Invalid class\n");
 	}
-	if (ptr[EI_CLASS] == 1)
+	if (ptr[EI_CLASS] == ELFCLASS32)
 	{
 		printf("ELF32\n");
 	}
-	if (ptr[EI_CLASS] == 2)
+	if (ptr[EI_CLASS] == ELFCLASS64)
 	{
 		printf("ELF64\n");
 	}
 	/*-----------------------------------------------------*/
 	/*print data*/
 	printf("  Data:                              2's complement, ");
-	if (ptr[EI_DATA] == 0)
+	if (ptr[EI_DATA] == ELFDATANONE)
 	{
 		printf("Invalid data encoding\n");
 	}
-	if (ptr[EI_DATA] == 1)
+	if (ptr[EI_DATA] == ELFDATA2LSB	)
 	{
 		printf("little endian\n");
 	}
-	if (ptr[EI_DATA] == 2)
+	if (ptr[EI_DATA] == ELFDATA2MSB)
 	{
 		printf("big endian\n");
 	}
@@ -116,43 +116,43 @@ int main(int argc, char *argv[])
 	printf("  OS/ABI:                            ");
 	switch (ptr[EI_OSABI])
 	{
-		case 0:
+		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
 			break;
-		case 1:
+		case ELFOSABI_HPUX:
 			printf("UNIX - Hewlett-Packard HP-UX\n");
 			break;
-		case 2:
+		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
-		case 3:
+		case ELFOSABI_LINUX:
 			printf("UNIX - Linux\n");
 			break;
-		case 6:
+		case ELFOSABI_SOLARIS:
 			printf("UNIX - Solaris\n");
 			break;
-		case 7:
+		case ELFOSABI_AIX:
 			printf("UNIX - AIX\n");
 			break;
-		case 8:
+		case ELFOSABI_IRIX:
 			printf("UNIX - IRIX\n");
 			break;
-		case 9:
+		case ELFOSABI_FREEBSD:
 			printf("UNIX - FreeBSD\n");
 			break;
-		case 10:
+		case ELFOSABI_TRU64:
 			printf("UNIX - Compaq TRU64 UNIX\n");
 			break;
-		case 11:
+		case ELFOSABI_MODESTO:
 			printf("UNIX - Novell Modesto\n");
 			break;
-		case 12:
+		case ELFOSABI_OPENBSD	:
 			printf("UNIX - Open BSD\n");
 			break;
-		case 13:
+		case ELFOSABI_OPENVMS:
 			printf("UNIX - Open VMS\n");
 			break;
-		case 14:
+		case ELFOSABI_NSK:
 			printf("UNIX - Hewlett-Packard Non-Stop Kernel\n");
 			break;
 		default:
