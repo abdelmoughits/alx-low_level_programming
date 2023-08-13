@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 	}
 	/*----------------------------------------------------*/
 	/*print magic*/
-	printf("Magic:   ");
+	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x", ptr[i]);
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 	}
 	/*----------------------------------------------------*/
 	/*print class*/
-	printf("Class:                             ");
+	printf("  Class:                             ");
 	if (ptr[EI_CLASS] == 0)
 	{
 		printf("Invalid class\n");
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 	}
 	/*-----------------------------------------------------*/
 	/*print data*/
-	printf("Data:                              2's complement, ");
+	printf("  Data:                              2's complement, ");
 	if (ptr[EI_DATA] == 0)
 	{
 		printf("Invalid data encoding\n");
@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 	}
 	/*-----------------------------------------------------*/
 	/*print version*/
-	printf("Version:                           ");
+	printf("  Version:                           ");
 	if (ptr[EI_VERSION] == EV_CURRENT)
 	{
 		printf("1 (current)\n");
@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
 	}
 	/*-----------------------------------------------------*/
 	/*print os/abi*/
-	printf("OS/ABI:                            ");
+	printf("  OS/ABI:                            ");
 	switch (ptr[EI_OSABI])
 	{
 		case 0:
@@ -159,8 +159,11 @@ int main(int argc, char *argv[])
 			printf("<unknown: %02d>\n", ptr[EI_OSABI]);
 	}
 	/*------------------------------------------------------*/
+	/*print ABI Version*/
+	printf("  ABI Version:                       %d\n", ptr[EI_ABIVERSION]);
+	/*------------------------------------------------------*/
 	/*print Type*/
-	printf("Type:                              ");
+	printf("  Type:                              ");
 	switch (buffer->e_type)
 	{
 		case ET_NONE:
@@ -197,11 +200,11 @@ int main(int argc, char *argv[])
 	/*print Entry*/
 	if (buffer->e_entry == 0)
 	{
-		printf("Entry point address:              0 ((no associated entry point)\n");
+		printf("  Entry point address:              0 ((no associated entry point)\n");
 	}
 	else
 	{
-		printf("Entry point address:               %lx\n", buffer->e_entry);
+		printf("  Entry point address:               %p\n", (void *)buffer->e_entry);
 	}
 	return (0);
 }
