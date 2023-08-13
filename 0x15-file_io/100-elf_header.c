@@ -204,7 +204,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("  Entry point address:               0x%lx\n", buffer->e_entry);
+		printf("  Entry point address:               0x%08lx\n", buffer->e_entry);
 	}
 	return (0);
 }
