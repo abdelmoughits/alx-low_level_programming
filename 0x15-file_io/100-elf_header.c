@@ -172,7 +172,7 @@ int main(int argc, char *argv[])
 		case ET_REL:
 			printf("REL (Relocatable file)\n");
 			break;
-		case 2:
+		case ET_EXEC:
 			printf("EXEC (Executable file)\n");
 			break;
 		case ET_DYN:
@@ -198,7 +198,15 @@ int main(int argc, char *argv[])
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
-	printf("  Entry point address:               0x%lx\n", buffer->e_entry);
+	printf("  Entry point address:               ");
+	if (ptr[EI_CLASS] == ELFCLASS32)
+	{
+		printf("0x%x\n", (unsigned int)buffer->e_entry);
+	}
+	if (ptr[EI_CLASS] == ELFCLASS64)
+	{
+		printf("0x%lx\n", (unsigned long)buffer->e_entry);
+	}
 	return (0);
 }
 /**
