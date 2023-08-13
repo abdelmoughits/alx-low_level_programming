@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
-	Elf64_Ehdr *buffer;
+	Elf32_Ehdr *buffer;
 
 	if (argc != 2)
 	{
