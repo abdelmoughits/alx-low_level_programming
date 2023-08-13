@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 	printf("  Version:                           ");
 	if (ptr[EI_VERSION] == EV_CURRENT)
 	{
-		printf("1 (current)\n");
+		printf("%d (current)\n", EV_CURRENT);
 	}
 	else
 	{
