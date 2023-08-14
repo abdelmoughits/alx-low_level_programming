@@ -13,8 +13,7 @@ int main(int argc, char *argv[])
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
 	Elf64_Ehdr *buffer;
-	long int var = 0, sar = 255;
-	long int tar = 0;
+	unsigned long int entry = 0, b;
 
 	if (argc != 2)
 	{
@@ -200,37 +199,22 @@ int main(int argc, char *argv[])
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
-	printf("  Entry point address:               ");
-	var = buffer->e_entry;
-	if (ptr[EI_CLASS] == ELFCLASS32)
+	if (ptr[EI_DATA] == ELFDATA2LSB)
 	{
-		m = (int)(buffer->e_entry >> 32);
-		var = (long int)m;
-		if (ptr[EI_DATA] == ELFDATA2LSB)
+		for (b = 0; b < sizeof(buffer->e_entry); b++)
 		{
-			i = (m & 255) << 24;
-			i = i | ((m & (255 << 8)) << 8);
-			i = i | ((m & (255 << 16)) >> 8);
-			i = i | ((m & (255 << 24)) >> 24);
-			var = (long int)i;
+			entry |= ((unsigned long int)buffer->e_entry >> (b * 8)) & 0xFFUL;
+			if (b < sizeof(buffer->e_entry) - 1)
+			{
+				entry <<= 8;
+			}
 		}
+		printf("  Entry point address:               0x%lx\n", entry);
 	}
 	else
 	{
-		if (ptr[EI_DATA] == ELFDATA2LSB)
-		{
-			tar = var;
-			var = (tar & sar) << 56;
-			var = var | ((tar & (sar << 8)) << 40);
-			var = var | ((tar & (sar << 16)) << 24);
-			var = var | ((tar & (sar << 24)) << 8);
-			var = var | ((tar & (sar << 56)) >> 56);
-			var = var | ((tar & (sar << 48)) >> 40);
-			var = var | ((tar & (sar << 40)) >> 24);
-			var = var | ((tar & (sar << 32)) >> 8);
-		}		
+		printf("  Entry point address:               0x%lx\n", buffer->e_entry);
 	}
-	printf("0x%lx\n", (unsigned long int)var);
 	return (0);
 }
 /**
