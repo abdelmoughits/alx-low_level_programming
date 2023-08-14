@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
 	Elf64_Ehdr *buffer;
-	unsigned long int entry = 0, b;
+	unsigned long int entry_point;
 
 	if (argc != 2)
 	{
@@ -199,21 +199,14 @@ int main(int argc, char *argv[])
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
+	entry_point = buffer->e_entry;
 	if (ptr[EI_DATA] == ELFDATA2LSB)
 	{
-		for (b = 0; b < sizeof(buffer->e_entry); b++)
-		{
-			entry |= ((unsigned long int)buffer->e_entry >> (b * 8)) & 0xFFUL;
-			if (b < sizeof(buffer->e_entry) - 1)
-			{
-				entry <<= 8;
-			}
-		}
-		printf("  Entry point address:               0x%lx\n", entry);
-	}
-	else
-	{
-		printf("  Entry point address:               0x%lx\n", buffer->e_entry);
+		entry_point = ((entry_point >> 24) & 0x000000FF) |
+			((entry_point >> 8)  & 0x0000FF00) |
+			((entry_point << 8)  & 0x00FF0000) |
+			((entry_point << 24) & 0xFF000000);
+		printf("  Entry point address:               0x%lx\n", entry_point);
 	}
 	return (0);
 }
