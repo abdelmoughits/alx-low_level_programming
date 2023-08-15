@@ -215,19 +215,19 @@ int main(int argc, char *argv[])
 	}
 	if (ptr[EI_CLASS] == ELFCLASS32)
 	{
-		printf("%x\n", (unsigned int)entry);
+		printf("%#x\n", (unsigned int)entry);
 	}
 	else
 	{
-		printf("%lx\n", (unsigned long int)entry);
+		printf("%#lx\n", (unsigned long int)entry);
 	}
 	return (0);
 }
 /**
-  *clode_ELF - close a file
-  *@fd: the identifier of the file
-  *Return: nothing
-  */
+ *clode_ELF - close a file
+ *@fd: the identifier of the file
+ *Return: nothing
+ */
 void clode_ELF(int fd)
 {
 	if (close(fd) == -1)
