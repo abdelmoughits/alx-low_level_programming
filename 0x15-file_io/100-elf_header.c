@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("%lx\n", (unsigned long int)entry_point);
+		printf("%lx\n", (unsigned long int)entry);
 	}
 	return (0);
 }
