@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
 	Elf64_Ehdr *buffer;
-	int entry_point, sar = 255;
+	int entry;
 
 	if (argc != 2)
 	{
@@ -199,14 +199,21 @@ int main(int argc, char *argv[])
 	}
 	/*-------------------------------------------------------*/
 	/*print Entry*/
-	entry_point = buffer->e_entry;
-	if (ptr[EI_DATA] == ELFDATA2LSB)
+	entry = buffer->e_entry;
+	printf("  Entry point address:               0x");
+	if (ptr[EI_DATA] == ELFDATA2MSB)
 	{
-		entry_point = ((buffer->e_entry >> 24) & sar) |
-			((buffer->e_entry >> 16) & (sar << 8)) |
-			((entry_point << 8) & (sar << 16)) |
-			(entry_point & (sar << 24));
-		printf("  Entry point address:               0x%lx\n", (unsigned int)entry_point);
+		entry = ((entry << 8) & 0xFF00FF00) |
+			((entry >> 8) & 0xFF00FF);
+		entry = (entry << 16) | (entry >> 16);
+	}
+	if (ptr[EI_CLASS] == ELFCLASS32)
+	{
+		printf("%x\n", (unsigned int)entry);
+	}
+	else
+	{
+		printf("%lx\n", (unsigned long int)entry_point);
 	}
 	return (0);
 }
