@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
 	Elf64_Ehdr *buffer;
-	unsigned long int entry_point, sar = 255;
+	long int entry_point, sar = 255;
 
 	if (argc != 2)
 	{
@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
 			((buffer->e_entry >> 16) & (sar << 8)) |
 			((entry_point << 8) & (sar << 16)) |
 			(entry_point & (sar << 24));
-		printf("  Entry point address:               0x%lx\n", entry_point);
+		printf("  Entry point address:               0x%lx\n", (unsigned long int)entry_point);
 	}
 	return (0);
 }
