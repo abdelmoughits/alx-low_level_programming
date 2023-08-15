@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
 	int i, m = 0, fd = 0;
 	unsigned char *ptr;
 	Elf64_Ehdr *buffer;
-	int entry;
+	unsigned long int entry;
+	unsigned int etype;
 
 	if (argc != 2)
 	{
@@ -165,7 +166,12 @@ int main(int argc, char *argv[])
 	/*------------------------------------------------------*/
 	/*print Type*/
 	printf("  Type:                              ");
-	switch (buffer->e_type)
+	etype = buffer->e_type;
+	if (ptr[EI_DATA] == ELFDATA2MSB)
+	{
+		etype >>= 8;
+	}
+	switch (etype)
 	{
 		case ET_NONE:
 			printf("<NONE: No file type>\n");
