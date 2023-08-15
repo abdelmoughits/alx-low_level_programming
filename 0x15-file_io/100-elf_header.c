@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
 	/*-------------------------------------------------------*/
 	/*print Entry*/
 	entry = buffer->e_entry;
-	printf("  Entry point address:               0x");
+	printf("  Entry point address:               ");
 	if (ptr[EI_DATA] == ELFDATA2MSB)
 	{
 		entry = ((entry << 8) & 0xFF00FF00) |
