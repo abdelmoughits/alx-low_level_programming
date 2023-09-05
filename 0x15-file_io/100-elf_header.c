@@ -158,7 +158,7 @@ int main(int argc, char *argv[])
 			printf("UNIX - Hewlett-Packard Non-Stop Kernel\n");
 			break;
 		default:
-			printf("<unknown: %02d>\n", ptr[EI_OSABI]);
+			printf("<unknown: %x>\n", ptr[EI_OSABI]);
 	}
 	/*------------------------------------------------------*/
 	/*print ABI Version*/
